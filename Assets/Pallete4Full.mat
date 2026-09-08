@@ -27,14 +27,26 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
+    - _AerialEnd: 320
+    - _AerialStart: 60
+    - _AerialStrength: 0
     - _Blend: 1
     - _Brightness: 0
     - _Contrast: 1.44
+    - _DepthThreshold: 0.043
     - _DitherScale: 1
     - _DitherStrength: 0.045
+    - _EdgeStrength: 0.095
+    - _EdgeThickness: 1
     - _GammaMatch: 1
+    - _GrazingRelax: 12
     - _Match: 0
+    - _NormalThreshold: 0.25
+    - _Threshold0: 0.1667
+    - _Threshold1: 0.5
+    - _Threshold2: 0.8333
     m_Colors:
+    - _AerialColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color0: {r: 0, g: 0, b: 0, a: 1}
     - _Color1: {r: 0.254717, g: 0.038501777, b: 0, a: 1}
     - _Color2: {r: 1, g: 0.6293749, b: 0.33490568, a: 1}

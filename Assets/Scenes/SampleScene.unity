@@ -855,25 +855,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChaseCamera
   target: {fileID: 981996448}
   detachFromTarget: 1
-  followDistance: 0
-  followHeight: 2.2
-  lookAhead: 25
-  followFrequency: 1.6
-  followDamping: 0.7
-  turnFollow: 6
-  aimFrequency: 3
+  followDistance: 8
+  followHeight: 2.4
+  lookAhead: 30
+  aimHeight: 0.6
+  turnFollow: 5
+  flightPathBlend: 0.2
+  followFrequency: 2.2
+  followDamping: 0.85
+  aimFrequency: 3.5
   aimDamping: 1
-  aimTracking: 0.75
-  rollFollow: 0.45
-  referenceSpeed: 25
+  aimTracking: 0.8
+  rollFollow: 0.55
+  rollLevel: 1.6
+  maxRoll: 55
+  referenceSpeed: 28
   distanceGain: 3
   baseFov: 0
-  fovGain: 12
+  fovGain: 14
   fovFollow: 2
-  swingGain: 0.09
+  swingGain: 0.1
   maxSwing: 2.5
-  swingFollow: 4
-  accelerationSmoothing: 10
+  swingFollow: 5
+  accelerationSmoothing: 12
+  avoidGeometry: 1
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  collisionRadius: 0.4
+  minDistance: 1.5
+  pullOutRate: 3
+  selectLooksBehind: 1
   shakeAngle: 2.2
   shakeOffset: 0.2
   shakeFrequency: 20
@@ -2390,21 +2402,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AirshipController
   maxThrust: 30
-  throttleChangeRate: 0.5
-  startThrottle: 1
+  throttleChangeRate: 0.6
+  startThrottle: 0.7
+  airbrakeDrag: 6
   cruiseSpeed: 20
   stallSpeed: 8
-  maxLiftG: 2
+  maxLiftG: 3
   elevatorPower: 2
   forwardDrag: 0.04
   sideDrag: 1
   verticalDrag: 0.15
-  pitchSpeed: 45
-  rollSpeed: 60
-  invertPitch: 0
+  pitchSpeed: 55
+  rollSpeed: 120
+  stickPitch: 1
+  stickAttack: 6
+  stickRelease: 10
   playerControlled: 1
-  rollAutoLevel: 50
+  flightAssist: 0
+  rollAutoLevel: 45
+  pitchAutoLevel: 30
+  yawAssist: 25
   tailStrength: 3
+  startFlying: 1
 --- !u!4 &981996448
 Transform:
   m_ObjectHideFlags: 0
@@ -2484,19 +2503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e55b03420e3e041a78f3dd04d5a7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WingGuns
-  projectilePrefab: {fileID: 0}
-  muzzles:
-  - {fileID: 628591714}
-  - {fileID: 2083972917}
-  fireKey: 1
-  fireRate: 8
-  alternate: 1
-  muzzleFlash: {fileID: 0}
-  fireShake: 0.05
-  rb: {fileID: 0}
-  chaseCamera: {fileID: 0}
-  nextShotTime: 0
-  nextMuzzle: 0
 --- !u!1 &987128501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,13 +3289,18 @@ MonoBehaviour:
   altitudeTrackHeight: 96
   altitudeTrackWidth: 5
   maxDisplayAltitude: 150
-  speedTrackWidth: 56
-  speedTrackHeight: 5
+  barWidth: 56
+  barHeight: 5
   maxDisplaySpeed: 30
   margin: 6
-  trackColor: {r: 0.1, g: 0.15, b: 0.1, a: 1}
-  fillColor: {r: 0.75, g: 0.85, b: 0.3, a: 1}
-  zeroColor: {r: 1, g: 1, b: 1, a: 1}
+  showLabels: 1
+  showValues: 1
+  textShadow: 1
+  showStallWarning: 1
+  stallBlinkRate: 3
+  trackColor: {r: 0, g: 0, b: 0, a: 1}
+  fillColor: {r: 1, g: 1, b: 1, a: 1}
+  markColor: {r: 0.667, g: 0.667, b: 0.667, a: 1}
 --- !u!4 &1564643540
 Transform:
   m_ObjectHideFlags: 0
